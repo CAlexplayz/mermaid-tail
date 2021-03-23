@@ -182,6 +182,7 @@ RegisterPolymerTemplateModifications({
       'brave_settings:help',
       'braveHelpTips',
     )
+	/*
     const syncEl = createMenuElement(
       loadTimeData.getString('braveSync'),
       '/braveSync',
@@ -189,7 +190,8 @@ RegisterPolymerTemplateModifications({
       'braveSync',
     )
     newTabEl.insertAdjacentElement('afterend', syncEl)
-    syncEl.insertAdjacentElement('afterend', helpTipsEl)
+	*/
+    newTabEl.insertAdjacentElement('afterend', helpTipsEl)
     // Add Shields item
     const shieldsEl = createMenuElement(
       loadTimeData.getString('braveShieldsTitle'),

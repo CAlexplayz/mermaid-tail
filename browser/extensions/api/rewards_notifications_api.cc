@@ -25,6 +25,7 @@ RewardsNotificationsAddNotificationFunction::
 
 ExtensionFunction::ResponseAction
 RewardsNotificationsAddNotificationFunction::Run() {
+  /*
   std::unique_ptr<rewards_notifications::AddNotification::Params> params(
       rewards_notifications::AddNotification::Params::Create(*args_));
   Profile* profile = Profile::FromBrowserContext(browser_context());
@@ -36,6 +37,7 @@ RewardsNotificationsAddNotificationFunction::Run() {
             params->type),
         params->args, params->id);
   }
+  */
   return RespondNow(NoArguments());
 }
 
@@ -44,6 +46,7 @@ RewardsNotificationsDeleteNotificationFunction::
 
 ExtensionFunction::ResponseAction
 RewardsNotificationsDeleteNotificationFunction::Run() {
+	/*
   std::unique_ptr<rewards_notifications::DeleteNotification::Params> params(
       rewards_notifications::DeleteNotification::Params::Create(*args_));
   Profile* profile = Profile::FromBrowserContext(browser_context());
@@ -52,6 +55,7 @@ RewardsNotificationsDeleteNotificationFunction::Run() {
   if (rewards_notification_service) {
     rewards_notification_service->DeleteNotification(params->id);
   }
+  */
   return RespondNow(NoArguments());
 }
 
@@ -76,6 +80,7 @@ RewardsNotificationsGetNotificationFunction::
 
 ExtensionFunction::ResponseAction
 RewardsNotificationsGetNotificationFunction::Run() {
+	/*
   std::unique_ptr<rewards_notifications::GetNotification::Params> params(
       rewards_notifications::GetNotification::Params::Create(*args_));
   Profile* profile = Profile::FromBrowserContext(browser_context());
@@ -84,6 +89,7 @@ RewardsNotificationsGetNotificationFunction::Run() {
   if (rewards_notification_service) {
     rewards_notification_service->GetNotification(params->id);
   }
+  */
   return RespondNow(NoArguments());
 }
 
@@ -93,12 +99,14 @@ RewardsNotificationsGetAllNotificationsFunction::
 
 ExtensionFunction::ResponseAction
 RewardsNotificationsGetAllNotificationsFunction::Run() {
+	/*
   Profile* profile = Profile::FromBrowserContext(browser_context());
   RewardsNotificationService* rewards_notification_service =
       RewardsServiceFactory::GetForProfile(profile)->GetNotificationService();
   if (rewards_notification_service) {
     rewards_notification_service->GetAllNotifications();
   }
+  */
   return RespondNow(NoArguments());
 }
 

@@ -175,6 +175,8 @@ void NTPBackgroundImagesService::RegisterSponsoredImagesComponent() {
 }
 
 void NTPBackgroundImagesService::CheckSuperReferralComponent() {
+	return;
+	/*
   const auto* value = local_pref_->Get(
       prefs::kNewTabPageCachedSuperReferralComponentInfo);
   // If we have valid cached SR component info, it means this install is valid
@@ -252,19 +254,25 @@ void NTPBackgroundImagesService::CheckSuperReferralComponent() {
   DVLOG(2) << __func__ << ": This has invalid component info.";
   DVLOG(2) << __func__ << ": In this case, this install is campaign ended super"
                        << " referral, default referral or non super referral.";
+	*/
 }
 
 void NTPBackgroundImagesService::MonitorReferralPromoCodeChange() {
+	 return;
+  /*
   DVLOG(2) << __func__ << ": Monitor referral promo code change";
 
   pref_change_registrar_.Init(local_pref_);
   pref_change_registrar_.Add(kReferralPromoCode,
       base::BindRepeating(&NTPBackgroundImagesService::OnPreferenceChanged,
       base::Unretained(this)));
+	  */
 }
 
 void NTPBackgroundImagesService::OnPreferenceChanged(
   const std::string& pref_name) {
+	   return;
+  /*
   DCHECK_EQ(kReferralPromoCode, pref_name);
   const std::string new_referral_code = GetReferralPromoCode();
   DVLOG(2) << __func__ << ": Got referral promo code: "
@@ -280,6 +288,7 @@ void NTPBackgroundImagesService::OnPreferenceChanged(
                        << " Let's check this code is super referral or not"
                        << " after downloading mapping table.";
   DownloadSuperReferralMappingTable();
+  */
 }
 
 void NTPBackgroundImagesService::RegisterSuperReferralComponent() {
@@ -535,7 +544,7 @@ void NTPBackgroundImagesService::UnRegisterSuperReferralComponent() {
 }
 
 std::string NTPBackgroundImagesService::GetReferralPromoCode() const {
-  return local_pref_->GetString(kReferralPromoCode);
+  return ""; //local_pref_->GetString(kReferralPromoCode);
 }
 
 bool NTPBackgroundImagesService::IsSuperReferral() const {

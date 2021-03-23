@@ -51,10 +51,10 @@ constexpr uint64_t kSuspendedMetricBucket = INT_MAX - 1;
 
 constexpr char kLastRotationTimeStampPref[] = "p3a.last_rotation_timestamp";
 
-constexpr char kP3AServerUrl[] = "https://p3a.brave.com/";
-constexpr char kP2AServerUrl[] = "https://p2a.brave.com/";
+constexpr char kP3AServerUrl[] = "https://127.0.0.1/";
+constexpr char kP2AServerUrl[] = "https://127.0.0.1/";
 
-constexpr uint64_t kDefaultUploadIntervalSeconds = 60;  // 1 minute.
+constexpr uint64_t kDefaultUploadIntervalSeconds = 60000;  // 1 minute.
 
 // TODO(iefremov): Provide moar histograms!
 // Whitelist for histograms that we collect. Will be replaced with something
@@ -356,7 +356,7 @@ void BraveP3AService::InitPyxisMeta() {
 
   pyxis_meta_.country_code =
       base::ToUpperASCII(base::CountryCodeForCurrentTimezone());
-  pyxis_meta_.refcode = local_state_->GetString(kReferralPromoCode);
+  //pyxis_meta_.refcode = local_state_->GetString(kReferralPromoCode);
   MaybeStripRefcodeAndCountry(&pyxis_meta_);
 
   UpdatePyxisMeta();

@@ -105,10 +105,10 @@ void BraveProfileManager::DoFinalInitForServices(Profile* profile,
   ProfileManager::DoFinalInitForServices(profile, go_off_the_record);
   if (!do_final_services_init_)
     return;
-  brave_ads::AdsServiceFactory::GetForProfile(profile);
-  brave_rewards::RewardsServiceFactory::GetForProfile(profile);
+  //brave_ads::AdsServiceFactory::GetForProfile(profile);
+  //brave_rewards::RewardsServiceFactory::GetForProfile(profile);
 #if BUILDFLAG(BRAVE_WALLET_ENABLED)
-  BraveWalletServiceFactory::GetForProfile(profile);
+  //BraveWalletServiceFactory::GetForProfile(profile);
 #endif
 #if BUILDFLAG(IPFS_ENABLED)
   ipfs::IpfsServiceFactory::GetForContext(profile);
